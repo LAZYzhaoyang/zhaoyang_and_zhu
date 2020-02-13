@@ -1,0 +1,115 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Our Love Story</title>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<style type="text/css">
+		@font-face {
+			font-family: digit;
+			src: url('digital.ttf') format("truetype");
+		}
+	</style>
+	<link href="css/default.css" type="text/css" rel="stylesheet">
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/garden.js"></script>
+	<script type="text/javascript" src="js/functions.js"></script>
+</head>
+
+<body>
+<div id="mainDiv">
+	<div id="content">
+		<div id="code">
+			<span class="comments">Dear Zhulin | Maria:</span><br/>
+			<span class="comments">I want to keep our good memories,</span><br/>
+			<span class="comments">So I create this website as a Valentine's Day gift for you.</span><br/>
+			<span class="comments">I first met you in the spring of 2005.</span><br/>
+            <span class="comments">At that time, we didn‘t know what is love, didn’t know what is like.
+            Just kept this friendship,and waiting for the arrangement of the fate.</span><br/>
+			<span class="comments">It was a wonderful farewell on the first day of school in 2009.
+            I was glad to met you again. Those three years are one of my best memories so far.</span><br/>
+			<span class="comments">Within three years, I had found that I gradually fell in love with you.This feeling grew stronger over time.</span><br/>
+
+			<span class="comments">......</span><br/>
+			<span class="comments">Unfortunately, fate separated us after graduation.We went to different high schools and kept working for each other's dreams.
+            This feeling in my heart was temporarily suppressed.Because I know I have to be better to see you again.</span><br/>
+			<span class="comments">......</span><br/>
+			<span class="comments">After three years of waiting, I thought I could finally accompany you.Yet fate has once again played a trick on us.
+            I didn't want to miss you again.I had decided to expressed my heart to you even though I had to endure the pain of lovesickness again.</span><br/>
+
+			<span class="comments">I never regret this decision. On the contrary, I'm glad I kept you.Thank you for giving me the chance to love you.
+            Although we stumbled along the way, broke up, together again, you still choose to stayed with me.</span><br/>
+			<span class="comments">......</span><br/>
+			<span class="comments">The longer the lovesickness, the stronger the desire to see you.</span><br/>
+			<span class="comments">Every time I stay with you, I wish time would go slower.</span><br/>
+			<span class="comments">I wish I could hold you in my arms, watch the sunrise and sunset.</span><br/>
+			<span class="comments">I wish I could have you by my side every day.</span><br/>
+			<span class="comments">I wish I could walk down the aisle with you.</span><br/>
+			<span class="comments">I wish I could marry you.</span><br/>
+			<span class="comments">......</span><br/>
+			<span class="comments">I know it's a long way to go.</span><br/>
+			<span class="comments">I'll be waiting for you.</span><br/>
+			<span class="comments">I love you forever.</span><br/>
+			<span class="placeholder"></span>
+			<span class="placeholder"></span>
+			<span class="placeholder"></span>
+			<span class="placeholder"></span>
+			<span class="placeholder"></span>
+			<span class="placeholder"></span>
+			<span class="placeholder"></span>
+			<span class="placeholder"></span>
+			<span class="comments">Zhaoyang Li | Sun.</span><br/>
+
+		</div>
+		<div id="loveHeart">
+			<canvas id="garden"></canvas>
+			<div id="words">
+				<div id="messages">
+					Zhu, I have fallen in love with you for
+					<div id="elapseClock"></div>
+				</div>
+				<div id="loveu">
+					Love you forever.<br/>
+					<div class="signature">- Zhaoyang Li | Sun</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+</div>
+<script type="text/javascript">
+	var offsetX = $("#loveHeart").width() / 2;
+	var offsetY = $("#loveHeart").height() / 2 - 55;
+	var together = new Date();
+	// 此处月份介于 0 ~ 11 之间。用本地时间表示，如 8 月要用 7 表示。
+	together.setFullYear(2009, 8, 1);
+	together.setHours(9);
+	together.setMinutes(0);
+	together.setSeconds(0);
+	together.setMilliseconds(0);
+
+	if (!document.createElement('canvas').getContext) {
+		var msg = document.createElement("div");
+		msg.id = "errorMsg";
+		msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+";
+		document.body.appendChild(msg);
+		$("#code").css("display", "none")
+		$("#copyright").css("position", "absolute");
+		$("#copyright").css("bottom", "10px");
+		document.execCommand("stop");
+	} else {
+		setTimeout(function () {
+			startHeartAnimation();
+		}, 5000);
+
+		timeElapse(together);
+		setInterval(function () {
+			timeElapse(together);
+		}, 500);
+
+		adjustCodePosition();
+		$("#code").typewriter();
+	}
+</script>
+</body>
+</html>
